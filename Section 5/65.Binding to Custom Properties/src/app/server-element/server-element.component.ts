@@ -6,8 +6,8 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./server-element.component.css']
 })
 export class ServerElementComponent implements OnInit {
- @Input() element: {type: string, name: string, content: string}; //vazo to input() mprosta gia na stilo ta dedomena sto app-component.html
-
+  @Input() element: { type: string, name: string, content: string };
+  //vazo to input() mprosta gia na stilo ta dedomena sto app-component.html
 
   constructor() { }
 
