@@ -6,7 +6,8 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./cockpit.component.css']
 })
 export class CockpitComponent implements OnInit {
- @Output() serverCreated = new EventEmitter<{serverName: string, serverContent: string }>();
+ @Output() serverCreated = new EventEmitter<{serverName: string, serverContent: string }>(); //outpu gia na peraso ta stixia ekso apo to component
+  //EventEmitter gia custome events k to kano import apo to angular core
  @Output() blueprintCreated = new EventEmitter<{serverName: string, serverContent: string }>();
 
   newServerName = '';
