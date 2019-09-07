@@ -3,7 +3,8 @@ import {EventEmitter} from '@angular/core';
 
 export class ShoppingListService {
 
-  ingredientsChanged = new EventEmitter<Ingredient[]>();  //kano emmiter gia na paro to neo ingredient apo to copy k na to peraso sto kanoniko
+  ingredientsChanged = new EventEmitter<Ingredient[]>();
+  //kano emmiter gia na paro to neo ingredient apo to copy k na to peraso sto kanoniko
 
  private ingredients: Ingredient[] = [
     new Ingredient('Apples', 5),
@@ -15,9 +16,17 @@ export class ShoppingListService {
                                     // me afto ton tropo den exoun access sta original ingridents
   }
 
-  addIngredients(ingredient: Ingredient) { //tha exo recived pari ta ilika ingredintes
+  addIngredient(ingredient: Ingredient) { //tha exo recived pari ta ilika ingredintes
     this.ingredients.push(ingredient);  //thelo na exo access se afta k na kano push add ta ingredients
     this.ingredientsChanged.emit(this.ingredients.slice());  //perno ta copy sto kanoniko ingredinet
+
+  }
+
+  addIngredients(ingredients: Ingredient[]) {
+    this.ingredients.push(...ingredients);   //apo array elements [] ta kano se list apo elements , epidi i push methodos mpori na diaxiristi polla objects
+                                                 //all den mpori na dixairisti ena aray []
+    this.ingredientsChanged.emit(this.ingredients.slice());
+
 
   }
 }
