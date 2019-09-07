@@ -1,6 +1,9 @@
 import {Ingredient} from '../shared/ingredient.model';
+import {EventEmitter} from '@angular/core';
 
 export class ShoppingListService {
+
+  ingredientsChanged = new EventEmitter<Ingredient[]>();  //kano emmiter gia na paro to neo ingredient apo to copy k na to peraso sto kanoniko
 
  private ingredients: Ingredient[] = [
     new Ingredient('Apples', 5),
@@ -14,6 +17,7 @@ export class ShoppingListService {
 
   addIngredients(ingredient: Ingredient) { //tha exo recived pari ta ilika ingredintes
     this.ingredients.push(ingredient);  //thelo na exo access se afta k na kano push add ta ingredients
+    this.ingredientsChanged.emit(this.ingredients.slice());  //perno ta copy sto kanoniko ingredinet
 
   }
 }
