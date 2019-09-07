@@ -24,7 +24,7 @@ export class ShoppingEditComponent implements OnInit {
     //add new emit gia na peraso sto parent component to opion ine to shoping-list.component
    const newIngredient  = new Ingredient(ingName, ingAmount);  //dimiourgo neo Ingredient k pernao to onoma
 
-    this.slService.addIngredients(newIngredient);
+    this.slService.addIngredient(newIngredient);
 
   }
 
