@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import { Recipe } from '../recipe.model';
 import {RecipeService} from '../recipe.service';
@@ -10,8 +10,6 @@ import {RecipeService} from '../recipe.service';
 })
 export class RecipeListComponent implements OnInit {
 
- @Output() recipeWasSelected = new EventEmitter<Recipe>(); //edo pernao to Recipe type
-
   recipes: Recipe[];
 
   constructor( private recipeService: RecipeService ) { }
@@ -21,7 +19,4 @@ export class RecipeListComponent implements OnInit {
   }
 
 
-  onRecipeSelected (recipe: Recipe) { //tha paro to recipe type
-      this.recipeWasSelected.emit(recipe);
-  }
 }
