@@ -15,6 +15,12 @@ export class ShoppingListComponent implements OnInit {
 
   ngOnInit() {
     this.ingredients = this.slService.getIngredients();
+    this.slService.ingredientsChanged   //pao sta ingredient na do ean exi allaksi
+      .subscribe(                           //kano subscribe gia na ksero ean exi gini kapia allgi
+        (ingredients: Ingredient[]) => {  //etsi tha ksero oti exoun gini allages
+          this.ingredients = ingredients;   //pernao ta ingredient pou pira me ta kanonika ingredinet
+        }
+      ) ;
   }
 
 }
