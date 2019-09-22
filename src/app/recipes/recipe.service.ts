@@ -29,9 +29,9 @@ export class RecipeService {
 
     constructor(private elService: ShoppingListService) {}
 
-      getRecipes() {
-        return this.recipes.slice();
-      }
+  getRecipes(index: number) {
+      return this.recipes[index];
+  }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.elService.addIngredients(ingredients);
